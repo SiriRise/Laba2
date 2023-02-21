@@ -16,9 +16,9 @@ while True:
     print("Введите количество разных цифр")
     diff_number = int(input())
     for j in buffer:
-        reg = re.findall(r"[0-7]*[0-7]", j)
+        reg = re.findall(r"[0-7]{1,4}", j)
         if len(reg) == 1:
-            if len(j) == len(reg[0]) and len(j) <= 4:
+            if len(j) == len(reg[0]):
                 if int(j) % 2 != 0 and len(set(j)) >= diff_number and int(j, 8) <= 2048:
                     good += 1
                     print(j)
