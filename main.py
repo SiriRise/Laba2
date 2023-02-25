@@ -10,11 +10,11 @@ file = open("text.txt", "r")
 while True:
     buffer = file.readline().split()
     if not buffer:
-        print("Файл в директории проекта закончился")
         break
     good = 0
-    print("Введите количество разных цифр")
-    diff_number = int(input())
+    diff_number = int(input("Количество разных цифр: "))
+    while 0 > diff_number or diff_number > 9:
+        diff_number = int(input("Количество разных цифр: "))
     for j in buffer:
         reg = re.findall(r"[0-7]{1,4}", j)
         if len(reg) == 1:
