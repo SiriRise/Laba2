@@ -14,7 +14,7 @@ while True:
         break
     good = 0
     for j in buffer:
-        reg = re.findall(r'^[0-7]+[1357]$|^[1357]$', j)
+        reg = re.findall(r'^[0-7]*[1357]$', j)
         if len(reg) == 1 and int(j) <= 4000 and len(j) <= 3:
                 good = 1
                 print(''.join(reg))
