@@ -6,7 +6,7 @@ import re
 
 slovar = {"0": "ноль", "1": "один", "2": "два", "3": "три", "4": "четыре", "5": "пять", "6": "шесть", "7": "семь"}
 
-file = open("text3.txt", "r")
+file = open("text.txt", "r")
 while True:
     buffer = file.readline().split()
     if not buffer:
