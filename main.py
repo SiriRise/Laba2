@@ -6,7 +6,7 @@ import re
 
 slovar = {"0": "ноль", "1": "один", "2": "два", "3": "три", "4": "четыре", "5": "пять", "6": "шесть", "7": "семь","-":""}
 
-file = open("text3.txt", "r")
+file = open("text.txt", "r")
 while True:
     buffer = file.readline().split()
     if not buffer:
@@ -14,9 +14,8 @@ while True:
         break
     good = 0
     for j in buffer:
-        reg = re.findall(r'^-?[0-7]*[1357]$', j)
-
-        if len(reg) == 1 and int(j) <= 4000 and len("".join(j)) >= 2:
+        reg = re.findall(r'(^-?[0-7][1357]|^-?[0-7][0-7][1357]|^-?[0-3][0-7][0-7][1357])\b', j)
+        if len(reg) == 1:
                 good = 1
                 print(''.join(reg))
                 num = ("".join(sorted(set(j), key=j.index)))
