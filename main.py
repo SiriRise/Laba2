@@ -14,7 +14,7 @@ while True:
         break
     good = 0
     for j in buffer:
-        reg = re.findall(r'(^-?[0-7][1357]|^-?[0-7][0-7][1357]|^-?[0-3][0-7][0-7][1357])\b', j)
+        reg = re.findall(r'^-?(-[0-7]+[1357]|^-?[0-7][1357]|^-?[0-7][0-7][1357]|^-?[0-3][0-7][0-7][1357])\b', j)
         if len(reg) == 1:
                 good = 1
                 print(''.join(reg))
